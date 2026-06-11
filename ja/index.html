@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ケンケンゴーゴー — 小さなAIの裁判官たちであらゆるもめ事を解決</title>
+  <meta name="description" content="ケンケンゴーゴーは、日常のもめ事を小さなAIの裁判官たちが解決します — 無料、プライベート、あなたのiPhoneで。友だちや家族との言い争いを楽しく決着。" />
+  <link rel="icon" href="/characters/elder.png" />
+  <link rel="alternate" hreflang="en" href="https://villagecouncilapp.github.io/" />
+  <link rel="alternate" hreflang="es" href="https://villagecouncilapp.github.io/es/" />
+  <link rel="alternate" hreflang="ja" href="https://villagecouncilapp.github.io/ja/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://villagecouncilapp.github.io/zh-Hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://villagecouncilapp.github.io/zh-Hant/" />
+  <link rel="alternate" hreflang="x-default" href="https://villagecouncilapp.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #F4E9D4;
+      --ink: #3B2F2A;
+      --terracotta: #D9694A;
+      --teal: #5E9E8F;
+      --surface: #FBF4E3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Nunito', system-ui, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      font-weight: 700;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px 56px;
+    }
+    main { width: 100%; max-width: 680px; text-align: center; }
+
+    .langs { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 22px; font-weight: 800; font-size: 13px; }
+    .langs a { color: #9b8a7d; text-decoration: none; padding: 0 10px; border-right: 1px solid #d8c9b0; }
+    .langs a:last-child { border-right: none; }
+    .langs a.active, .langs a:hover { color: var(--ink); }
+
+    h1 {
+      font-family: 'Fredoka', "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      font-weight: 700;
+      font-size: clamp(38px, 8.4vw, 60px);
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .tagline {
+      font-size: clamp(15px, 4vw, 19px);
+      color: #6b5a4f;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    .council {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 38px;
+    }
+    .council img {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .cta {
+      display: inline-block;
+      font-family: 'Fredoka', "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
+      background: var(--terracotta);
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      padding: 16px 34px;
+      box-shadow: 5px 5px 0 var(--ink);
+      transition: transform .08s ease, box-shadow .08s ease;
+    }
+    .cta:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .disclaimer {
+      margin-top: 52px;
+      background: var(--surface);
+      border: 3px solid var(--ink);
+      border-radius: 22px;
+      box-shadow: 5px 5px 0 var(--ink);
+      padding: 24px 26px;
+      text-align: left;
+    }
+    .disclaimer h2 {
+      font-family: 'Fredoka', "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .disclaimer p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #6b5a4f;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #9b8a7d;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="言語">
+      <a href="/">EN</a>
+      <a href="/es/">ES</a>
+      <a href="/ja/" class="active">日本語</a>
+      <a href="/zh-Hans/">简体</a>
+      <a href="/zh-Hant/">繁體</a>
+    </nav>
+
+    <h1>ケンケンゴーゴー</h1>
+    <p class="tagline">どっちが正しいか決まらない？小さなAIの裁判官たちに任せましょう — 無料、プライベート、あなたのiPhoneで、1分以内に。</p>
+
+    <div class="council">
+      <img src="../characters/elder.png" alt="長老" />
+      <img src="../characters/pragmatist.png" alt="実利主義者" />
+      <img src="../characters/empath.png" alt="共感者" />
+      <img src="../characters/logician.png" alt="論理家" />
+      <img src="../characters/devil.png" alt="悪魔の代弁者" />
+      <img src="../characters/mediator.png" alt="仲裁者" />
+      <img src="../characters/idealist.png" alt="理想家" />
+      <img src="../characters/skeptic.png" alt="懐疑派" />
+      <img src="../characters/realist.png" alt="事実主義者" />
+      <img src="../characters/contrarian.png" alt="天邪鬼" />
+    </div>
+
+    <!-- Placeholder link: points to Google until the app ships on the App Store. -->
+    <a class="cta" href="https://www.google.com" target="_blank" rel="noopener">App Store でダウンロード</a>
+
+    <section class="disclaimer">
+      <h2>あくまでお遊びです</h2>
+      <p>ケンケンゴーゴーは、友だちや家族とのちょっとした意見の食い違いを和やかに解決したり、合意に至ったりするための気軽なアプリです。法的な助言ではなく、専門家や弁護士への相談に代わるものではありません。その評決にもとづいて下されたいかなる決定・結果・行動についても、当方は一切の法的責任を負いません。</p>
+    </section>
+
+    <footer>© 2026 Village Council · <a href="/ja/privacy.html" style="color:inherit;">プライバシーポリシー</a></footer>
+  </main>
+</body>
+</html>

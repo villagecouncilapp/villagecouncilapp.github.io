@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>七嘴八舌 — 用一群小小的 AI 法官裁決任何爭論</title>
+  <meta name="description" content="七嘴八舌用一群小小的 AI 法官裁決日常爭論 —— 免費、私密、就在你的手機上。和朋友或家人打破僵局的有趣方式。" />
+  <link rel="icon" href="/characters/elder.png" />
+  <link rel="alternate" hreflang="en" href="https://villagecouncilapp.github.io/" />
+  <link rel="alternate" hreflang="es" href="https://villagecouncilapp.github.io/es/" />
+  <link rel="alternate" hreflang="ja" href="https://villagecouncilapp.github.io/ja/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://villagecouncilapp.github.io/zh-Hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://villagecouncilapp.github.io/zh-Hant/" />
+  <link rel="alternate" hreflang="x-default" href="https://villagecouncilapp.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #F4E9D4;
+      --ink: #3B2F2A;
+      --terracotta: #D9694A;
+      --teal: #5E9E8F;
+      --surface: #FBF4E3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Nunito', system-ui, "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      font-weight: 700;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px 56px;
+    }
+    main { width: 100%; max-width: 680px; text-align: center; }
+
+    .langs { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 22px; font-weight: 800; font-size: 13px; }
+    .langs a { color: #9b8a7d; text-decoration: none; padding: 0 10px; border-right: 1px solid #d8c9b0; }
+    .langs a:last-child { border-right: none; }
+    .langs a.active, .langs a:hover { color: var(--ink); }
+
+    h1 {
+      font-family: 'Fredoka', "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      font-weight: 700;
+      font-size: clamp(40px, 9vw, 62px);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .tagline {
+      font-size: clamp(15px, 4vw, 19px);
+      color: #6b5a4f;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    .council {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 38px;
+    }
+    .council img {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .cta {
+      display: inline-block;
+      font-family: 'Fredoka', "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
+      background: var(--terracotta);
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      padding: 16px 34px;
+      box-shadow: 5px 5px 0 var(--ink);
+      transition: transform .08s ease, box-shadow .08s ease;
+    }
+    .cta:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .disclaimer {
+      margin-top: 52px;
+      background: var(--surface);
+      border: 3px solid var(--ink);
+      border-radius: 22px;
+      box-shadow: 5px 5px 0 var(--ink);
+      padding: 24px 26px;
+      text-align: left;
+    }
+    .disclaimer h2 {
+      font-family: 'Fredoka', "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .disclaimer p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #6b5a4f;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #9b8a7d;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="語言">
+      <a href="/">EN</a>
+      <a href="/es/">ES</a>
+      <a href="/ja/">日本語</a>
+      <a href="/zh-Hans/">簡體</a>
+      <a href="/zh-Hant/" class="active">繁體</a>
+    </nav>
+
+    <h1>七嘴八舌</h1>
+    <p class="tagline">爭不出誰對誰錯？讓一群小小的 AI 法官來裁決 —— 免費、私密、就在你的手機上，一分鐘內搞定。</p>
+
+    <div class="council">
+      <img src="../characters/elder.png" alt="長者" />
+      <img src="../characters/pragmatist.png" alt="務實者" />
+      <img src="../characters/empath.png" alt="共情者" />
+      <img src="../characters/logician.png" alt="邏輯家" />
+      <img src="../characters/devil.png" alt="魔鬼代言人" />
+      <img src="../characters/mediator.png" alt="調解者" />
+      <img src="../characters/idealist.png" alt="理想主義者" />
+      <img src="../characters/skeptic.png" alt="懷疑者" />
+      <img src="../characters/realist.png" alt="現實主義者" />
+      <img src="../characters/contrarian.png" alt="唱反調者" />
+    </div>
+
+    <!-- Placeholder link: points to Google until the app ships on the App Store. -->
+    <a class="cta" href="https://www.google.com" target="_blank" rel="noopener">在 App Store 下載</a>
+
+    <section class="disclaimer">
+      <h2>只是圖個樂</h2>
+      <p>七嘴八舌是一種輕鬆的方式，讓你和朋友或家人友善地解決小分歧、達成共識。它不構成法律建議，也不能取代專業或法律諮詢。對於依據其裁決所做出的任何決定、結果或行動，我們概不承擔法律責任。</p>
+    </section>
+
+    <footer>© 2026 Village Council · <a href="/zh-Hant/privacy.html" style="color:inherit;">隱私權政策</a></footer>
+  </main>
+</body>
+</html>

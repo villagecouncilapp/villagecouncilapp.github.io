@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dime y Diretes — resuelve cualquier disputa con un panel de pequeños jueces con IA</title>
+  <meta name="description" content="Dime y Diretes resuelve las disputas cotidianas con un panel de pequeños jueces con IA — gratis, privado, en tu teléfono. Una forma divertida de desempatar con un amigo o un familiar." />
+  <link rel="icon" href="/characters/elder.png" />
+  <link rel="alternate" hreflang="en" href="https://villagecouncilapp.github.io/" />
+  <link rel="alternate" hreflang="es" href="https://villagecouncilapp.github.io/es/" />
+  <link rel="alternate" hreflang="ja" href="https://villagecouncilapp.github.io/ja/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://villagecouncilapp.github.io/zh-Hans/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://villagecouncilapp.github.io/zh-Hant/" />
+  <link rel="alternate" hreflang="x-default" href="https://villagecouncilapp.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #F4E9D4;
+      --ink: #3B2F2A;
+      --terracotta: #D9694A;
+      --teal: #5E9E8F;
+      --surface: #FBF4E3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Nunito', system-ui, "PingFang SC", "PingFang TC", "Hiragino Sans", "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+      font-weight: 700;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px 56px;
+    }
+    main { width: 100%; max-width: 680px; text-align: center; }
+
+    .langs { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 22px; font-weight: 800; font-size: 13px; }
+    .langs a { color: #9b8a7d; text-decoration: none; padding: 0 10px; border-right: 1px solid #d8c9b0; }
+    .langs a:last-child { border-right: none; }
+    .langs a.active, .langs a:hover { color: var(--ink); }
+
+    h1 {
+      font-family: 'Fredoka', "PingFang SC", "PingFang TC", "Hiragino Sans", "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+      font-weight: 700;
+      font-size: clamp(40px, 9vw, 64px);
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+    .tagline {
+      font-size: clamp(16px, 4.2vw, 20px);
+      color: #6b5a4f;
+      max-width: 460px;
+      margin: 0 auto 32px;
+    }
+
+    .council {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 38px;
+    }
+    .council img {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .cta {
+      display: inline-block;
+      font-family: 'Fredoka', "PingFang SC", "PingFang TC", "Hiragino Sans", "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
+      background: var(--terracotta);
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      padding: 16px 34px;
+      box-shadow: 5px 5px 0 var(--ink);
+      transition: transform .08s ease, box-shadow .08s ease;
+    }
+    .cta:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .disclaimer {
+      margin-top: 52px;
+      background: var(--surface);
+      border: 3px solid var(--ink);
+      border-radius: 22px;
+      box-shadow: 5px 5px 0 var(--ink);
+      padding: 24px 26px;
+      text-align: left;
+    }
+    .disclaimer h2 {
+      font-family: 'Fredoka', "PingFang SC", "PingFang TC", "Hiragino Sans", "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .disclaimer p {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #6b5a4f;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #9b8a7d;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="Idioma">
+      <a href="/">EN</a>
+      <a href="/es/" class="active">ES</a>
+      <a href="/ja/">日本語</a>
+      <a href="/zh-Hans/">简体</a>
+      <a href="/zh-Hant/">繁體</a>
+    </nav>
+
+    <h1>Dime y Diretes</h1>
+    <p class="tagline">¿No se ponen de acuerdo sobre quién tiene razón? Deja que un panel de pequeños jueces con IA lo decida — gratis, privado, en tu teléfono y en menos de un minuto.</p>
+
+    <div class="council">
+      <img src="../characters/elder.png" alt="El Anciano" />
+      <img src="../characters/pragmatist.png" alt="El Pragmático" />
+      <img src="../characters/empath.png" alt="El Empático" />
+      <img src="../characters/logician.png" alt="El Lógico" />
+      <img src="../characters/devil.png" alt="El Abogado del Diablo" />
+      <img src="../characters/mediator.png" alt="El Mediador" />
+      <img src="../characters/idealist.png" alt="El Idealista" />
+      <img src="../characters/skeptic.png" alt="El Escéptico" />
+      <img src="../characters/realist.png" alt="El Realista" />
+      <img src="../characters/contrarian.png" alt="El Inconforme" />
+    </div>
+
+    <!-- Placeholder link: points to Google until the app ships on the App Store. -->
+    <a class="cta" href="https://www.google.com" target="_blank" rel="noopener">Descargar en el App&nbsp;Store</a>
+
+    <section class="disclaimer">
+      <h2>Solo por diversión</h2>
+      <p>Dime y Diretes es una forma desenfadada de resolver una pequeña discrepancia o llegar a un acuerdo con un amigo o un familiar, con buen ánimo. No constituye asesoramiento legal ni sustituye la consulta profesional o jurídica. No asumimos ninguna responsabilidad legal por cualquier decisión, resultado o acción que se tome a partir de sus veredictos.</p>
+    </section>
+
+    <footer>© 2026 Village Council · <a href="/es/privacy.html" style="color:inherit;">Política de privacidad</a></footer>
+  </main>
+</body>
+</html>
