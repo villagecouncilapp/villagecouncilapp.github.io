@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2RYA2HU2CK.com.songyu.vc.VillageCouncil"],
+        "components": [
+          {
+            "/": "/d/*",
+            "comment": "Shared-Link dispute deep links — the dispute payload rides in the URL fragment, which Universal Links ignore for matching, so /d/* covers every link."
+          }
+        ]
+      }
+    ]
+  }
+}

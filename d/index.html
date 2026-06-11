@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open your dispute — Village Council</title>
+  <meta name="description" content="Someone sent you a dispute to settle with Village Council. Open it in the app, or get Village Council on the App Store." />
+  <meta name="robots" content="noindex" />
+
+  <!-- Smart App Banner. Replace APPSTORE_ID with the numeric App Store id once the
+       app is live (App Store Connect → App Information → "Apple ID"). Until then this
+       is inert (no banner shows); the visible button below is the working fallback.
+       app-argument is set to the full link (incl. #fragment) by the script below. -->
+  <meta name="apple-itunes-app" content="app-id=APPSTORE_ID" />
+
+  <link rel="icon" href="/characters/elder.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #F4E9D4;
+      --ink: #3B2F2A;
+      --terracotta: #D9694A;
+      --teal: #5E9E8F;
+      --surface: #FBF4E3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Nunito', system-ui, sans-serif;
+      font-weight: 700;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px 56px;
+    }
+    main { width: 100%; max-width: 460px; text-align: center; }
+
+    .seal {
+      width: 88px; height: 88px; margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      border: 3px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .seal svg { width: 40px; height: 40px; }
+
+    h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: clamp(28px, 7vw, 38px);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .sub {
+      font-size: 16px;
+      color: #6b5a4f;
+      max-width: 360px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 19px;
+      text-decoration: none;
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      padding: 15px 24px;
+      box-shadow: 5px 5px 0 var(--ink);
+      transition: transform .08s ease, box-shadow .08s ease;
+      margin-bottom: 14px;
+    }
+    .btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+    .btn-primary { background: var(--terracotta); color: #fff; }
+    .btn-secondary { background: var(--surface); color: var(--ink); }
+
+    .hint {
+      font-size: 13px;
+      font-weight: 700;
+      color: #9b8a7d;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 30 30" fill="none"><rect x="6" y="13.5" width="18" height="12" rx="3" stroke="#fff" stroke-width="2.6"/><path d="M10 13.5V10a5 5 0 0 1 10 0v3.5" stroke="#fff" stroke-width="2.6"/></svg>
+    </div>
+
+    <h1>A dispute is waiting</h1>
+    <p class="sub">Someone wants the council to settle this. Open it in Village Council to add your side.</p>
+
+    <a id="open" class="btn btn-primary" href="#">Open in Village Council</a>
+    <a id="store" class="btn btn-secondary" href="https://apps.apple.com/app/idAPPSTORE_ID">Get Village Council — free</a>
+
+    <p class="hint">Already have the app? This link should open it automatically. If it didn't, tap <strong>Open in Village Council</strong> above. New here? Install the app, then tap your link again.</p>
+  </main>
+
+  <script>
+    (function () {
+      var hash = window.location.hash || "";          // the dispute payload (#<token>)
+      var fullURL = window.location.href;
+      var openBtn = document.getElementById("open");
+
+      // Pass the full link (incl. fragment) to the app via the Smart App Banner.
+      var banner = document.querySelector('meta[name="apple-itunes-app"]');
+      if (banner) {
+        banner.setAttribute("content", banner.getAttribute("content") + ", app-argument=" + fullURL);
+      }
+
+      if (hash.length > 1) {
+        // Custom-scheme fallback: opens the app directly if Universal Links didn't fire.
+        openBtn.setAttribute("href", "villagecouncil://d/" + hash);
+      } else {
+        // No payload — someone opened /d/ directly; the "open" button has nothing to do.
+        openBtn.style.display = "none";
+      }
+    })();
+  </script>
+</body>
+</html>
