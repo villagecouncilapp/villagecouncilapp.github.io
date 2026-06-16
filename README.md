@@ -1,4 +1,4 @@
-# Village Council — web host
+# Squabble Council — web host
 
 Host behind the app's Universal Links, the shared-dispute links (Mode 2), and the signed character manifest. **Not part of the iOS build.**
 

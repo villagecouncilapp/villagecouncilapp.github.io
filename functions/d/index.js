@@ -31,7 +31,7 @@ export const onRequest = async ({ request, next }) => {
 
   const title = name
     ? `${name} wants the council to settle this`
-    : "A dispute is waiting — Village Council";
+    : "A dispute is waiting — Squabble Council";
   const description = topic
     ? `“${topic}” — tap to add your side. Free, on-device AI judges, in under a minute.`
     : "Someone wants the council to settle this. Tap to add your side — free, on-device AI judges.";
