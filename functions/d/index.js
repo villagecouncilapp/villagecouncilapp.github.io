@@ -35,7 +35,7 @@ export const onRequest = async ({ request, next }) => {
   const description = topic
     ? `“${topic}” — tap to add your side. Free, on-device AI judges, in under a minute.`
     : "Someone wants the council to settle this. Tap to add your side — free, on-device AI judges.";
-  const image = `${url.origin}/characters/elder.png`; // TODO: swap for a 1200×630 /og/card.png
+  const image = `${url.origin}/og/card.png`; // add this 1200×630 asset to the host
 
   const setContent = (value) => ({ element: (el) => el.setAttribute("content", value) });
   const setText = (value) => ({ element: (el) => el.setInnerContent(value) });
