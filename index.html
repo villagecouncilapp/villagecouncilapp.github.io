@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Squabble Council — settle any dispute with a panel of tiny AI judges</title>
   <meta name="description" content="Squabble Council settles everyday disputes with a panel of tiny AI judges — free, private, on your phone. A fun way to break a tie with a friend or family member." />
+  
+  <!-- Open Graph / Twitter card. These hold GENERIC defaults; the Cloudflare Pages
+       function at /functions/d/index.js rewrites the title/description per-dispute
+       from the ?n= (sender) & ?t= (topic) query. On a static host they stay generic.
+       og:image is a placeholder — replace with a 1200×630 /og/card.png. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A dispute is waiting — Squabble Council" />
+  <meta property="og:description" content="Someone wants the council to settle this. Tap to add your side — free, on-device AI judges." />
+  <meta property="og:image" content="/og/card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A dispute is waiting — Squabble Council" />
+  <meta name="twitter:description" content="Someone wants the council to settle this. Tap to add your side — free, on-device AI judges." />
+  <meta name="twitter:image" content="/og/card.png" />
+
+  <!-- Smart App Banner. app-id is the app's numeric App Store id (6778672000).
+       The banner only renders once the app is live on the store; the visible button
+       below is the fallback. app-argument is set to the full link (incl. #fragment)
+       by the script below. -->
+  <meta name="apple-itunes-app" content="app-id=6778672000" />
+  
   <link rel="icon" href="icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
