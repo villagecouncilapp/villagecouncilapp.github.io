@@ -1,7 +1,1 @@
-# app-ads.txt — authorized digital sellers for Village Council (iOS app 6778672000).
-# Must be reachable at the ROOT of the App Store "Marketing URL" domain:
-#   https://villagecouncilapp.github.io/app-ads.txt
-# Replace pub-XXXXXXXXXXXXXXXX below with YOUR AdMob publisher ID — copy the exact
-# line from AdMob → Apps → app-ads.txt (it shows your real ID). f08c47fec0942fa0 is
-# Google's fixed certification-authority id; leave it as-is.
 google.com, pub-1081883780282380, DIRECT, f08c47fec0942fa0
